@@ -37,7 +37,7 @@ def CaptchaParse(img):
                     if pix2[y][x] == 0:
                         black += 1
             perc = float(match) / float(black)
-            matches.update({perc: i[0].upper()})
+            matches.update({perc: char.upper()})
         try:
             captcha += matches[max(matches.keys())]
         except ValueError:
