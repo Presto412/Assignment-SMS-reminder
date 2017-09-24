@@ -12,9 +12,9 @@ The message sending part is handled by the script sms_sender, that uses way2sms 
 
 
 To install dependencies 
-'''
+```
 $ pip install -r requirements.txt
-'''
+```
 
 
 
@@ -22,9 +22,9 @@ I scheduled this on cron to run every night at 9pm.
 
 To execute the main file,
 
-'''python
+```python
 $ python main.py
-'''
+```
 
 
 That's all, Folks.
