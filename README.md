@@ -22,7 +22,7 @@ I scheduled this on cron to run every night at 9pm.
 
 To execute the main file,
 
-```python
+```
 $ python main.py
 ```
 
