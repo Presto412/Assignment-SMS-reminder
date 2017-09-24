@@ -1,0 +1,11 @@
+# PythonScriptProjects/MessageReminder/captchaparser.py: 1
+# PythonScriptProjects/MessageReminder/main.py: 13
+Pillow == 4.2.1
+
+# PythonScriptProjects/MessageReminder/DAscraper.py: 1
+# PythonScriptProjects/MessageReminder/main.py: 12
+beautifulsoup4 == 4.6.0
+
+# PythonScriptProjects/MessageReminder/main.py: 10,11
+# PythonScriptProjects/MessageReminder/sms_sender.py: 1
+requests == 2.18.4
