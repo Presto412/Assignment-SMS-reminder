@@ -7,7 +7,7 @@ def process_da_table(row):
             "title":cells[1].text.encode("utf-8"),
             "max-mark":cells[2].text.encode("utf-8"),
             "weightage":cells[3].text.encode("utf-8"),
-            "due-date":cells[4].text.encode("utf-8")}
+            "due-date":cells[4].text.strip().encode("utf-8")}
 
 def get_DA_details(page):
     root = BeautifulSoup(page.text,"html.parser")
