@@ -28,20 +28,20 @@ from DAscraper import *
 from captchaparser import *
 from sms_sender import sendSMS
 
+import json
 
-# registration_number = "your_registration_number_here"
-registration_number = raw_input("Enter registration number:")
+with open("credentials.json", "r") as f:
+    creds = json.loads(f)
 
-# vtop_password = "your_password_here"
-vtop_password = getpass("Enter VTOP password:")
+registration_number = creds["reg_no"]
 
-# the current semester code, update on sem change
+vtop_password = creds["password"]
+
 semSubId = 'VL2017185'
 
-# to_number = "to_mobile_number_here"
-from_number = raw_input("Enter sender number:")
-way2sms_password = getpass("Enter way2sms password:")
-to_number = raw_input("Enter recipient number:")
+from_number = creds["from_number"]
+way2sms_password = creds["way2sms_pass"]
+to_number = creds["to_number"]
 
 today = datetime.date.today()
 
