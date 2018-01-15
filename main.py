@@ -36,7 +36,7 @@ registration_number = raw_input("Enter registration number:")
 vtop_password = getpass("Enter VTOP password:")
 
 # the current semester code, update on sem change
-semSubId = 'VL2017181'
+semSubId = 'VL2017185'
 
 # to_number = "to_mobile_number_here"
 from_number = raw_input("Enter sender number:")
@@ -64,14 +64,13 @@ def compare_dates(topic):
 def process_timetable(row):
     cells = row.find_all("td")
     return {
-        'class_no': cells[1].text.strip().encode('utf-8'),
         'course_code': cells[2].text.strip().encode('utf-8'),
         'course_title': cells[3].text.strip().encode('utf-8'),
         'course_type': cells[4].text.strip().encode('utf-8'),
-        'course_option': cells[10].text.strip().encode('utf-8'),
-        'slot': cells[11].text.strip().replace('+', ' ').encode('utf-8'),
-        'venue': cells[12].text.strip().encode('utf-8'),
-        'faculty_name': cells[13].text.strip().split('\n')[0].encode('utf-8')
+        'class_no': cells[5].text.strip().encode('utf-8'),
+        'slot': cells[8].text.strip().replace('+', ' ').encode('utf-8'),
+        'venue': cells[9].text.strip().encode('utf-8'),
+        'faculty_name': cells[10].text.strip().split('\n')[0].encode('utf-8')
     }
 
 def process_da_page(headers, course):
@@ -132,7 +131,7 @@ def main():
     root = BeautifulSoup(timetable.text, "html.parser")
     table = root.find_all(class_="table")[0]
     course_details = [process_timetable(row)
-                      for row in table.find_all("tr")[1:-1]]
+                      for row in table.find_all("tr")[2:-2]]
 
     # digital assignment page pinging
     doDigitalAssignment = requests.post(
