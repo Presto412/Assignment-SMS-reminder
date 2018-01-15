@@ -67,7 +67,7 @@ def process_timetable(row):
         'course_code': cells[2].text.strip().encode('utf-8'),
         'course_title': cells[3].text.strip().encode('utf-8'),
         'course_type': cells[4].text.strip().encode('utf-8'),
-        'class_no': cells[5].text.strip().encode('utf-8'),
+        'class_no': cells[7].text.strip().encode('utf-8'),
         'slot': cells[8].text.strip().replace('+', ' ').encode('utf-8'),
         'venue': cells[9].text.strip().encode('utf-8'),
         'faculty_name': cells[10].text.strip().split('\n')[0].encode('utf-8')
